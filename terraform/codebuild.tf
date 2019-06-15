@@ -79,15 +79,15 @@ resource "aws_codebuild_project" "cloudgoat_project" {
     type         = "LINUX_CONTAINER"
 
     environment_variable {
-      "name"  = "kinda_secret"
-      "value" = "ASHHJ#HIJBKSDBSKJN!55JNDKN!KJND!KJDN2KN"
-      "type"  = "PLAINTEXT"
+      name  = "kinda_secret"
+      value = "ASHHJ#HIJBKSDBSKJN!55JNDKN!KJND!KJDN2KN"
+      type  = "PLAINTEXT"
     }
 
     environment_variable {
-      "name"  = "super_secret"
-      "value" = "dhSJKl2*@6d6&@d82hk2bn1n1n"
-      "type"  = "PLAINTEXT"
+      name  = "super_secret"
+      value = "dhSJKl2*@6d6&@d82hk2bn1n1n"
+      type  = "PLAINTEXT"
     }
   }
 

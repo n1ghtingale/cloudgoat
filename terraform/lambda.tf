@@ -45,6 +45,6 @@ resource "aws_lambda_function" "lambda" {
   function_name    = "lambda_function"
   role             = "${aws_iam_role.lambda_iam.arn}"
   handler          = "lambda_function.lambda_handler"
-  source_code_hash = "${base64sha256(file("lambda_function.zip"))}"
+  source_code_hash = "${filebase64sha256("lambda_function.zip")}"
   runtime          = "python3.6"
 }
