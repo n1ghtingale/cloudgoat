@@ -1,6 +1,8 @@
 #!/bin/bash
 
 mkdir -p keys
+#from cloudgoat2
+echo -e 'y\n' | ssh-keygen -b 4096 -t rsa -f ./cloudgoat -q -N ""
 
 if [[ $1 = "" ]]; then
 	echo -e "Whitelist IP range required!\n\nAn IP range is required to whitelist access to security groups in the CloudGoat environment.\nThis is done for the safety of your account.\n\nUsage: ./${0##*/} <ip range>\nExample usage: ./${0##*/} 127.0.0.1/24"
@@ -42,12 +44,18 @@ if [[ -f ./keys/pgp_cloudgoat ]]; then
   gpg --export CloudGoat | base64 >> keys/pgp_cloudgoat
 fi
 
+
 cd terraform
+cgid=$RANDOM
+echo -n $cgid > cgid.txt
 terraform init
-terraform plan -var cloudgoat_private_bucket_name=$cloudgoat_private_bucket_name -var ec2_web_app_password=$ec2_web_app_password -var cloudgoat_public_bucket_name=$cloudgoat_public_bucket_name -var ec2_public_key="$(< ../keys/cloudgoat_key.pub)" -out plan.tfout
+terraform plan -var cloudgoat_private_bucket_name=$cloudgoat_private_bucket_name -var ec2_web_app_password=$ec2_web_app_password -var cloudgoat_public_bucket_name=$cloudgoat_public_bucket_name -var ec2_public_key="$(< ../keys/cloudgoat_key.pub)" -var cgid=$(cat cgid.txt) -out plan.tfout
 terraform apply -auto-approve plan.tfout
 
 cd .. && ./extract_creds.py
+
+cd terraform
+echo -e 'yes\n' | terraform destroy -var cgid=$(cat cgid.txt) -target aws_cloudformation_stack.test_lamp_stack_deleted
 
 ## Uncomment the following lines to enable the Glue development endpoint (along with kill.sh, extract_creds.py, and ./terraform/glue.tf)
 #glue_dev_endpoint_name=$(echo $RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM)

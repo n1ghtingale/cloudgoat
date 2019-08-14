@@ -1,13 +1,13 @@
 variable "ami_id" {
-  default = "ami-a9d09ed1"
+  default = "ami-05868579"
 }
 
 variable "availability_zone" {
-  default = "us-west-2a"
+  default = "ap-southeast-1a"
 }
 
 variable "aws_region" {
-  default = "us-west-2"
+  default = "ap-southeast-1"
 }
 
 variable "cloudgoat_private_bucket_name" {
@@ -24,4 +24,17 @@ variable "ec2_public_key" {
 
 variable "ec2_web_app_password" {
   default = "1234"
+}
+
+variable "cgid" {
+}
+
+# SSH public key
+variable "ssh-public-key-for-ec2" {
+    default = "../cloudgoat.pub"
+}
+
+# SSH private key
+variable "ssh-private-key-for-ec2" {
+    default = "../cloudgoat"
 }

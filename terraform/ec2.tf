@@ -100,3 +100,38 @@ resource "aws_iam_instance_profile" "cloudgoat_instance_profile" {
   name = "cloudgoat_ec2_iam_profile"
   role = "${aws_iam_role.ec2_role.name}"
 }
+
+#Custom challenge
+resource "aws_key_pair" "ec2-key-pair" {
+    key_name = "ec2-key-pair-${var.cgid}"
+    public_key = "${file(var.ssh-public-key-for-ec2)}"
+}
+
+resource "aws_instance" "ubuntu" {
+    ami = "ami-0dad20bd1b9c8c004"
+    instance_type = "t2.micro"
+    subnet_id = "${aws_subnet.subnet2.id}"
+    associate_public_ip_address = true
+    key_name = "${aws_key_pair.ec2-key-pair.key_name}"
+    vpc_security_group_ids = ["${aws_security_group.security-group1.id}"]
+    root_block_device {
+        volume_type = "gp2"
+        volume_size = 8
+        delete_on_termination = true
+    }
+    provisioner "file" {
+        source = "./index.html"
+        destination = "/home/ubuntu/index.html"
+    }
+    provisioner "local-exec" {
+        command = "ssh -o 'StrictHostKeyChecking no' -i ${var.ssh-private-key-for-ec2} ubuntu@${self.public_ip} 'nohup python3 -m http.server 8000 >/dev/null 2>&1 &'"
+    }
+    connection {
+        type = "ssh"
+        user = "ubuntu"
+        private_key = "${file(var.ssh-private-key-for-ec2)}"
+        host = self.public_ip
+        timeout = "1m"
+    }
+}
+

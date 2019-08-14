@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd terraform && terraform destroy -auto-approve
+cd terraform && terraform destroy -var cgid=$(cat cgid.txt) -auto-approve
 rm ../tmp/allow_cidr.txt
 rm ../credentials.txt
 rm ./terraform.tfstate*

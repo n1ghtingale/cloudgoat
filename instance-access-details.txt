@@ -1,0 +1,33 @@
+{
+    "accessDetails": {
+        "certKey": "ssh-rsa-cert-v01@openssh.com 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",
+        "ipAddress": "18.139.208.152",
+        "privateKey": "-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBAAKCAQEAsUVASMghoMRTZDCULI+y2Oh3HJfVyFUyCJQzYXeNRydPNbHi\nvjXgoSG5WGMRhsjyXaAXXIF39H9DpTZB9I4Ah5PbX8wYPQnLrgZxpaQZmPDOQ2wr\nwigC5igTMpvK4rDBtbR66zN7KtMqepqcZhKRarNyvkqVSsH7y5juQRqH0ImR8qgZ\nmTm7f4/8URCH+toL5zsyfWcnX/MbpeRoPNu3xsPVS3IHUQoMGokYJ4s3Z/qhf6ES\nhF5bhjSdm/sbniUqyLWuuZy81xxMD+gKHDgs6GQfGT6gdJPzaz7RN7TgWHb2hnZm\nj+SHs0aIs8zkvR9O/JHtsuvfHimvyrkgEovDWwIDAQABAoIBADPXiss+LAd2IuUk\nB9FYXPduVJc6GD00HSPBI52XduueJV4Qnbz+yKiW0jt1DYUbczXKQcq92jTYmxHP\n4k4A0UrVBMzpRRVkrfpAzC+i5BGEKu4wzkNDrEVe5u5f/V96Tcwz8dajAZwukTe1\ny5NWTsyjmiTobuyj+l06ZkMH3Tww4rB0EwaczSauUlyQPvan/ngSKXMMgNDEJM6Q\nq4zQoV9pbilps2rvEcrPCIGm8KUEXf4h6XQF3RQup0pkDn9cm1+Xp/Uxim0ZOzvp\nOpA4glEcuN+Jn7SWLdJrQdXF2SeVHqV3CwFQxAydEMBSMYSPyo0R8ClWriKCR4ox\n118gO3ECgYEA1zNEIotJrzprGcP87eri3cYqQFUkn3eLGmzT5UFlT3Enwr9f1X+o\n+VznjlHbZsDXUTEdNjpty1q52LA/9BeCaRl7PNSd/LBrtAAdN8gEZesoED2zIMn6\nNSySMi9TYDOV+ZZxfNpIn39TySYAX3PhwOZ/vXEMfdotKzcSb/cwDscCgYEA0uER\nDUVzng4ezpV7vTuMykV+4V1eLoGEmCyRwJdxaNdm8a19+XFjrnVHTsmla1qkb4B/\nidLboaPiDW9wjp93Cu55JgrNVbbQ94WswxUkmLnEl+WVLeRiab2T9fkT9teC86j2\n1BD5Tr1L7ZBFS/Kkmkhycv+cVbxoTuAWi4yaos0CgYA33jFUHoEUor/nQoBJa+9V\nz/psFS6az7gnNhWUsPOSOjguUOyaSrgddMcQpaOl+25qv6trxqN2ZalV3fvcbLYI\nfvsFgdU6IrrzUgxDzQOHShNuk/YLDySL5XRW3v5wPTQ0RaBU3353GeEwmVMDdNwo\n7i4/ijfJ/Hg5feSleLDbRQKBgEHJPsWSHhB3vTqbPZ/6HODZL0zlEMWXWCMU/F9F\nn3aihBXvFrajngJFyfoVRAqqm1PBlYgMhMH3W0TvuAB2VO/PF3I7unT79FLTm+K8\nDM+sXF06nQBVGDJ+ltMMYiMGdm7HDkF4Dh53RWGWOVgJGTqcUT/45++DOFMq6z2b\nnn4dAoGAPenc8mrYXruDMSOyd4cAhIhdh2PcnXxg/QJKOs/2YE2RKn2kVW+N4iLT\nubdLg0FlcjsDnpfMR3Pi947Evv/O3vNMzaploGAcZC1n1AA7+scf0yI/Z5chtOFG\nFbfqHcrIAm5oWsp7kOCyTs1cyGk22R+JaicUkThshlYx6thyqQE=\n-----END RSA PRIVATE KEY-----\n",
+        "protocol": "ssh",
+        "instanceName": "cloudgoat_ls",
+        "username": "ec2-user",
+        "hostKeys": [
+            {
+                "algorithm": "ssh-rsa",
+                "publicKey": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCy2ORUlJpLT7FP3UP3ifkGFyF814wA4+Xy6vDCBaooAkX+HMVlpa7BAar0aG4NZJTBAGwpqnAW2cS4Fok5VLTXN3gqV5SKgaUDhSNXe/AzpE4eIhXmkgzCmJLxRbBpIuZHSqtc/29cOeIE3LQTeoEJYQ3+czKYDTcOykQ5VU3DLS1Cp9g5SDwj3Ir+BWYZVZLb4dGxKLah4rr5jOBBwte0/VqwzVf9TkLZpdrKRnCH5GSjzdJmzLeMNUV5W5ik1qx0rUqJyAU6LrbSkocEfgATOYDEZJgj+KUQo76lzCN0ylPY1bDU8rTz6W4sf4qq3dES+rHP4Gpw/O60uL5L4UTT",
+                "witnessedAt": 1565604233.683,
+                "fingerprintSHA1": "SHA1:YHtKY+lw9ejlMkgp/m3/SIjyOIQ",
+                "fingerprintSHA256": "SHA256:q8jtNxd9EfGzzRNgToz92NpZAkmobGEraP6a0aoDFvE"
+            },
+            {
+                "algorithm": "ssh-ed25519",
+                "publicKey": "AAAAC3NzaC1lZDI1NTE5AAAAIOyTY7ESt9PIYhVnGLhEUmh9BUNjevSaeeUI6KWJjdOC",
+                "witnessedAt": 1565604233.682,
+                "fingerprintSHA1": "SHA1:9ZzaAPmeutjaq7CsJRR2dGB/O+U",
+                "fingerprintSHA256": "SHA256:3Rk7N2ywV6LgQsS7OtgpbZHTV1HlZa8T7DFrV+Jw+lM"
+            },
+            {
+                "algorithm": "ecdsa-sha2-nistp256",
+                "publicKey": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLFDig8WGsnHZDIUlFg/ijuEuIZP3HLNKjzSRtleE9cNB98V/Ccjjva+e2yuK7cY8y075UuTyekB53Q+EKvkKqA=",
+                "witnessedAt": 1565604233.696,
+                "fingerprintSHA1": "SHA1:3SdET5dRyqcKIduUlXg0mj7xcUA",
+                "fingerprintSHA256": "SHA256:AkngBCofqhswyzDWboEIhDJAnof7m+s7WaoHtWeio1o"
+            }
+        ]
+    }
+}
