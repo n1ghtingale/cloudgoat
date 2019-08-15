@@ -6,8 +6,20 @@ resource "aws_iam_user" "readonly" {
         Name = "readonly-${var.cgid}"
     }
 }
+
+resource "aws_iam_user" "testpacu" {
+    name = "TestPacuUser"
+    tags = {
+        Name = "TestPacuUser"
+    }
+}
+
 resource "aws_iam_access_key" "readonly" {
     user = "${aws_iam_user.readonly.name}"
+}
+
+resource "aws_iam_access_key" "testpacu" {
+    user = "${aws_iam_user.testpacu.name}"
 }
 
 # Read-write user with "iam:PassRole" permission
@@ -31,8 +43,6 @@ resource "aws_iam_user" "readwrite" {
 resource "aws_iam_access_key" "readwrite" {
     user = "${aws_iam_user.readwrite.name}"
 }
-
-
 
 # Policy for read-only user
 resource "aws_iam_policy" "policy-readonly" {
@@ -77,6 +87,27 @@ resource "aws_iam_policy" "policy-readwrite-passrole" {
 EOF
 }
 
+resource "aws_iam_policy" "test_pacu_policy" {
+    name = "testPacuPolicy"
+    policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:PutUserPolicy",
+        "iam:List*",
+        "iam:Get*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
+
+
 # Policy for read-write user without "iam:PassRole" permission
 resource "aws_iam_policy" "policy-readwrite" {
     name = "LambdaReadWriteIAMPolicy"
@@ -114,6 +145,11 @@ resource "aws_iam_user_policy_attachment" "policy-readwrite-passrole-attachment"
 resource "aws_iam_user_policy_attachment" "policy-readwrite-attachment" {
     user = "${aws_iam_user.readwrite.name}"
     policy_arn = "${aws_iam_policy.policy-readwrite.arn}"
+}
+
+resource "aws_iam_user_policy_attachment" "policy-pacu-attachment" {
+    user = "${aws_iam_user.testpacu.name}"
+    policy_arn = "${aws_iam_policy.test_pacu_policy.arn}"
 }
 
 resource "aws_iam_role" "ec2_full_access" {

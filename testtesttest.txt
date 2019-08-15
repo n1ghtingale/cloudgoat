@@ -1,6 +1,0 @@
-a = """{
-    "Policy": "{\"Version\":\"2012-10-17\",\"Id\":\"default\",\"Statement\":[{\"Sid\":\"LambdaTriggerOnS3Upload\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"s3.amazonaws.com\"},\"Action\":\"lambda:InvokeFunction\",\"Resource\":\"arn:aws:lambda:ap-southeast-1:089174252110:function:VulnerableFunction\",\"Condition\":{\"ArnLike\":{\"AWS:SourceArn\":\"arn:aws:s3:::bucket-for-lambda-pentesting-15886\"}}}]}",
-    "RevisionId": "5b300906-2b45-4f68-8bb5-b59e64ae9eae"
-}"""
-
-print(a)
