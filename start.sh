@@ -53,10 +53,10 @@ terraform init
 terraform plan -var cloudgoat_private_bucket_name=$cloudgoat_private_bucket_name -var ec2_web_app_password=$ec2_web_app_password -var cloudgoat_public_bucket_name=$cloudgoat_public_bucket_name -var ec2_public_key="$(< ../keys/cloudgoat_key.pub)" -var cgid=$(cat cgid.txt) -out plan.tfout
 terraform apply -auto-approve plan.tfout
 
+terraform destroy -auto-approve -var cgid=$(cat cgid.txt) -target aws_cloudformation_stack.test_lamp_stack_deleted
+
 cd .. && ./extract_creds.py
 
-cd terraform
-echo -e 'yes\n' | terraform destroy -var cgid=$(cat cgid.txt) -target aws_cloudformation_stack.test_lamp_stack_deleted
 
 ## Uncomment the following lines to enable the Glue development endpoint (along with kill.sh, extract_creds.py, and ./terraform/glue.tf)
 #glue_dev_endpoint_name=$(echo $RANDOM$RANDOM$RANDOM$RANDOM$RANDOM$RANDOM)
