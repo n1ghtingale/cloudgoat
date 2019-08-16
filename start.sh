@@ -3,6 +3,7 @@
 mkdir -p keys
 #from cloudgoat2
 echo -e 'y\n' | ssh-keygen -b 4096 -t rsa -f ./cloudgoat -q -N ""
+chmod 600 ./cloudgoat
 
 if [[ $1 = "" ]]; then
 	echo -e "Whitelist IP range required!\n\nAn IP range is required to whitelist access to security groups in the CloudGoat environment.\nThis is done for the safety of your account.\n\nUsage: ./${0##*/} <ip range>\nExample usage: ./${0##*/} 127.0.0.1/24"
